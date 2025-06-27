@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+html,body{ height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+form > .mat-mdc-form-field {
+    display: block;
+    max-width: 600px;
+    min-width: 300px;
+}
+
+mat-snack-bar-container {
+  &.valid .mat-mdc-snackbar-surface {
+    background-color: greenyellow;
+    color: black;
+  }
+
+  &.info .mat-mdc-snackbar-surface {
+    background-color: rgb(9, 31, 225);
+  }
+
+  &.warning .mat-mdc-snackbar-surface {
+    background-color: rgb(206, 134, 0);
+  }
+
+  &.error .mat-mdc-snackbar-surface {
+    background-color: rgb(203, 0, 0);
+  }
+}
+.custom-notification{
+    margin-top: 70px;
+    z-index: 1100;
+}

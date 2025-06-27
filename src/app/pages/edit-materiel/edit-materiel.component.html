@@ -1,0 +1,31 @@
+<h4 class="ms-5 fw-semibold">{{materielEdite ? "Modifier un matériel :" : "Ajouter un matériel :"}}</h4>
+<form (ngSubmit)="onAjoutMateriel()" [formGroup]="formulaire" class="ms-5">
+    <mat-form-field>
+        <mat-label>Nom</mat-label>
+        <input matInput placeholder="Ex. Apple MacBook" formControlName="nom" />
+        @if (formulaire.get('nom')?.hasError("required")) {
+            <mat-error>Le nom est requis</mat-error>
+        } @else {
+            <mat-error>Le nom ne peut pas avoir plus de 20 caractères</mat-error>
+        }
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Ex. Un écran 16 pouce" formControlName="description"></textarea>
+        <mat-error>La description ne peut pas avoir plus de 50 caractères
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Capacité</mat-label>
+        <input matInput placeholder="Ex. 128, 256 ..." formControlName="capacite" />
+        <mat-error>La capacité doit être en chiffre uniquemenet !
+        </mat-error>
+    </mat-form-field>
+
+
+    <button [disabled]="!formulaire.valid" mat-raised-button type="submit">
+        {{materielEdite ? "Modifier matériel" : "Ajouter le matériel"}}
+    </button>
+</form>

@@ -1,0 +1,29 @@
+<section class="connexion-page d-flex justify-content-center mt-5">
+  <div class="card-connexion">
+    <div class="card p-4 shadow contenue-card-connexion">
+      <h4 class="card-title text-center mt-4 mb-4">Connexion</h4>
+      <form (ngSubmit)="onConnection()" [formGroup]="formulaire" class="d-flex flex-column align-items-center">
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Ex. john@doe.com" formControlName="email" />
+
+          @if (formulaire.get('nom')?.hasError('required')) {
+          <mat-error>Le mail est requis</mat-error>
+          } @else {
+          <mat-error>Le mail est mal formé</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Mot de passe</mat-label>
+          <input matInput type="password" formControlName="password" />
+
+          @if (formulaire.get('password')?.hasError('required')) {
+          <mat-error>Un mot de passe est requis</mat-error>
+          }
+        </mat-form-field>
+        <button class="bouton mt-4" type="submit" mat-raised-button>Se connecter</button>
+      </form>
+    </div>
+  </div>
+</section>

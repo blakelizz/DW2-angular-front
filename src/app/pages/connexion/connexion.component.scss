@@ -1,18 +1,26 @@
-.logo{
-    font-size: 2em;
+h4{
     font-weight: 600;
-    color: rgba(113, 69, 214);
 }
 
-.session a {
+.contenue-card-connexion{
+    min-width: 450px;
+    min-height: 400px;
+}
+
+.connexion-page{
+    height: 100%;
+}
+
+.bouton {
     color: rgba(113, 69, 214);
     padding: 0.8em;
     background-color: #ffffff;
     border-radius: 10px;
     border: 1px solid rgba(113, 69, 214) ;
+    width: 200px;
 }
 
-.session a:hover{
+.bouton:hover{
     background-color: rgba(113, 69, 214);
     color: #ffffff;
 }
